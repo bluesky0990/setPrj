@@ -20,3 +20,8 @@
 <script src="${jsPath}/bootstrap5/bootstrap.esm.min.js"></script>
 <script src="${jsPath}/bootstrap5/bootstrap.bundle.min.js"></script>
 <!-- // Bootstrap 5 -->
+
+<!-- CSS -->
+<link href="${cssPath}/common/fonts.css" rel="stylesheet">
+<link href="${cssPath}/common/common.css" rel="stylesheet">
+<!-- // CSS -->
