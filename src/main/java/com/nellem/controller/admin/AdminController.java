@@ -12,6 +12,15 @@ public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
+	@RequestMapping(value = "/")
+	public String AdminAceess(Model model) {
+		
+		
+		model.addAttribute("data", model);
+		
+		return "admin/load";
+	}
+
 	@RequestMapping(value = "/login.do")
 	public String AdminLogin(Model model) {
 		
@@ -28,14 +37,5 @@ public class AdminController {
 		model.addAttribute("data", model);
 		
 		return "admin/main";
-	}
-	
-	@RequestMapping(value = "/menu/menuMgr.do")
-	public String AdminMenuList(Model model) {
-		
-		
-		model.addAttribute("data", model);
-		
-		return "admin/menu/menuMgr";
 	}
 }
