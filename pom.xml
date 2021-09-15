@@ -171,6 +171,20 @@
 			<artifactId>log4jdbc-remix</artifactId>
 			<version>0.2.7</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.axisj/axu4j -->
+		<dependency>
+		    <groupId>com.axisj</groupId>
+		    <artifactId>axu4j</artifactId>
+		    <version>1.2.2-RELEASE</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.cucumber/datatable -->
+		<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>datatable</artifactId>
+		    <version>4.1.0</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>

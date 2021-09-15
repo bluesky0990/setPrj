@@ -14,7 +14,6 @@ public class MainController {
 	@RequestMapping(value = "/")
 	public String home(Model model) {
 		
-		
 		model.addAttribute("data", model);
 		
 		return "main/main";
