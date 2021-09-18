@@ -12,9 +12,8 @@ public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/load.do")
 	public String AdminAceess(Model model) {
-		
 		
 		model.addAttribute("data", model);
 		
@@ -24,7 +23,6 @@ public class AdminController {
 	@RequestMapping(value = "/login.do")
 	public String AdminLogin(Model model) {
 		
-		
 		model.addAttribute("data", model);
 		
 		return "admin/login";
@@ -32,7 +30,6 @@ public class AdminController {
 
 	@RequestMapping(value = "/main.do")
 	public String AdminMain(Model model) {
-		
 		
 		model.addAttribute("data", model);
 		
