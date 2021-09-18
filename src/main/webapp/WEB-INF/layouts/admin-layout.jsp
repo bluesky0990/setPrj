@@ -3,36 +3,26 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="ax" uri="http://axisj.com/axu4j" %>
 <%
-	if(request.getSession().getAttribute("USER_INFO") != null && request.getSession().getAttribute("USER_ROLE").equals("ROLE_ADMIN")) {
-		
+	if(!request.getServletPath().equals("/login.jsp")) {
+		if(request.getSession().getAttribute("ACCOUNT_INFO") != null && request.getSession().getAttribute("ACCOUNT_ROLE").equals("ROLE_ADMIN")) {
+			//response.sendRedirect("/admin/login.do");
+		}
 	}
 %>
 <html>
 <head>
-	<title>iPastel</title>
+	<c:set scope="request" var="contextPath" value="/WEB-INF/views"/>
+	<c:set scope="request" var="cssPath" value="/resources/css"/>
+	<c:set scope="request" var="jsPath" value="/resources/js"/>
+	<c:set scope="request" var="adminPath" value="/resources/admin"/>
+	
 	<meta charset="UTF-8">
 	<jsp:include page="/WEB-INF/views/include/common.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/admin/include/adminCommon.jsp"></jsp:include>
+	{{header}}
 </head>
 
 <body>
-	<a href="/admin/load.do">move</a>
-	<div class="container-xxl h-100">
-		<div class="row h-100">
-			<nav id="aad" class="col h-100 p-0 m-0">
-				<jsp:include page="${contextPath}/include/sidebar.jsp"></jsp:include>
-			</nav>
-			<main id="bbd" class="col-9 p-0 m-0">
-				<div class="bg-dark">
-					ssss
-				</div>
-			</main>
-		</div>
-	</div>
+	{{contents}}
 </body>
 </html>
-
-<script type="text/javascript">
-	$(function() {
-		
-	});
-</script>
