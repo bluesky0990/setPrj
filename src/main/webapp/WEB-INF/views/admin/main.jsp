@@ -3,6 +3,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="ax" uri="http://axisj.com/axu4j" %>
 <ax:layout name="admin-layout.jsp">
-	<ax:div name="header">asd</ax:div>
-	<ax:div name="contents">ssss</ax:div>
+	<ax:div name="header">
+		header
+	</ax:div>
+	<ax:div name="contents">
+		contents
+	</ax:div>
 </ax:layout>
+

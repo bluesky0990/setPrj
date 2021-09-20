@@ -19,10 +19,10 @@
 	<meta charset="UTF-8">
 	<jsp:include page="/WEB-INF/views/include/common.jsp"></jsp:include>
 	<jsp:include page="/WEB-INF/views/admin/include/adminCommon.jsp"></jsp:include>
-	{{header}}
+	<ax:write divname="header"/>
 </head>
 
 <body>
-	{{contents}}
+	<ax:write divname="contents"/>
 </body>
 </html>
