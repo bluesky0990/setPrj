@@ -1,12 +1,13 @@
-package com.nellem.controller.admin.menu.service.impl;
+package com.nellem.ipastel.admin.menu.service.impl;
 
 import java.util.HashMap;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.nellem.controller.admin.menu.service.MenuMgrService;
+import com.nellem.ipastel.admin.menu.service.MenuMgrService;
 
 @Service
 public class MenuMgrServiceImpl implements MenuMgrService {

@@ -1,4 +1,4 @@
-package com.nellem.controller.admin.menu.service.impl;
+package com.nellem.ipastel.admin.menu.service.impl;
 
 import java.util.HashMap;
 

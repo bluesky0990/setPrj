@@ -1,4 +1,4 @@
-package com.nellem.controller.menu;
+package com.nellem.ipastel.menu;
 
 import java.util.Locale;
 
