@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.nellem.ipastel.admin.menu.service.MenuMgrService;
 
-@Service
+@Service("MenuMgrService")
 public class MenuMgrServiceImpl implements MenuMgrService {
 	
 	@Inject

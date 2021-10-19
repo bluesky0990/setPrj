@@ -98,6 +98,17 @@
 					}
 				}
 			});
+			function testAjax() {
+				$.ajax({
+					url: "/admin/menu/menuList.json",
+					success: function(data) {
+						console.log(data);
+					},
+					error: function(e) {
+						console.log(e);
+					}
+				});
+			}
 		</script>
 	</ax:div>
 </ax:layout>

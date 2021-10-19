@@ -19,7 +19,7 @@ import com.nellem.ipastel.admin.menu.service.MenuMgrService;
 public class MenuMgrController {
 	private static final Logger logger = LoggerFactory.getLogger(MenuMgrController.class);
 	
-	@Inject
+	@Resource(name="MenuMgrService")
 	MenuMgrService service;
 
 	@RequestMapping(value = "/menuMgr.do")
