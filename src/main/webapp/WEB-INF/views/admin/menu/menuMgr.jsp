@@ -88,27 +88,16 @@
 			
 			$("#jsTree").click(function() {
 				
-			}).jsTree({
+			}).jstree({
 				'core' : {
 					'data' : {
 						"url" : "/admin/menu/menuList.json",
-						"data" : function (node) {
-							return { "id" : node.id };
+						"data" : function (data) {
+							return { "menuCode" : data.menu_code };
 						}
 					}
 				}
 			});
-			function testAjax() {
-				$.ajax({
-					url: "/admin/menu/menuList.json",
-					success: function(data) {
-						console.log(data);
-					},
-					error: function(e) {
-						console.log(e);
-					}
-				});
-			}
 		</script>
 	</ax:div>
 </ax:layout>

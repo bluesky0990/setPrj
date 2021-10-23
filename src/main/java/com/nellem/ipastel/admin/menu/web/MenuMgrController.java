@@ -1,12 +1,15 @@
 package com.nellem.ipastel.admin.menu.web;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +22,7 @@ import com.nellem.ipastel.admin.menu.service.MenuMgrService;
 public class MenuMgrController {
 	private static final Logger logger = LoggerFactory.getLogger(MenuMgrController.class);
 	
-	@Resource(name="MenuMgrService")
+	@Autowired
 	MenuMgrService service;
 
 	@RequestMapping(value = "/menuMgr.do")
@@ -33,7 +36,7 @@ public class MenuMgrController {
 	
 	@RequestMapping(value = "menuList.json")
 	@ResponseBody
-	public HashMap MenuListJSON() throws Exception {
+	public List<Map<String, Object>> MenuListJSON() throws Exception {
 		return service.selectMenuListAll();
 	}
 }
