@@ -1,9 +1,8 @@
 package com.nellem.ipastel.admin.menu.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +14,14 @@ public class MenuMgrServiceImpl implements MenuMgrService {
 	
 	@Autowired
 	MenuMgrMapper mapper;
-
+	
 	@Override
-	public List<Map<String, Object>> selectMenuListAll() throws Exception {
-		return mapper.selectMenuListAll();
+	public HashMap<String, Object> selectOne(HashMap map) throws Exception {
+		return mapper.selectOne(map);
 	}
 
+	@Override
+	public List<Map<String, Object>> selectList() throws Exception {
+		return mapper.selectList();
+	}
 }

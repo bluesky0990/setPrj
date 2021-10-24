@@ -83,21 +83,48 @@
 	<ax:div name="scripts">
 		<script type="text/javascript">
 			$(function() {
-				
-			});
-			
-			$("#jsTree").click(function() {
-				
-			}).jstree({
-				'core' : {
-					'data' : {
-						"url" : "/admin/menu/menuList.json",
-						"data" : function (data) {
-							return { "menuCode" : data.menu_code };
+				var jsTree = $("#jsTree").jstree({
+					core : {
+						data : {
+							url : "/admin/menu/menuList.json",
+							data : function (data) {
+								bbb = data;
+								return {
+									"id": data.menu_code,
+									"parent": data.menu_up_code,
+									"menuCode": data.menu_code
+								};
+							}
+						}
+					},
+					types: {
+						'default': {
+							'icon': 'jstree-folder'
 						}
 					}
-				}
+				});
+				jsTree.jstree('get_selected', true);
+				jsTree.on("select_node.jstree", function(event, data) {
+					aaa = data;
+					console.log("!: " + event.type);
+					console.log("@: " + data.instance.get_node(data.selected).id);
+					//console.log("#: " + data.result.obj.attr("menuCode"));
+					console.log("$: " + data.node.id);
+					$.ajax({
+						type: "GET",
+						url: "/admin/menu/menu.json",
+						data: {"menu_code": 1},
+						contentType: "JSON",
+						cache: false,
+						success: function(data) {
+							
+						}
+					});
+				})
 			});
+			
+			var aaa;
+			var bbb;
 		</script>
 	</ax:div>
 </ax:layout>

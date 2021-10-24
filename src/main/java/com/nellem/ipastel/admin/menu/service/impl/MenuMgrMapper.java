@@ -1,5 +1,6 @@
 package com.nellem.ipastel.admin.menu.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,5 +9,6 @@ import org.springframework.dao.DataAccessException;
 
 @Mapper
 public interface MenuMgrMapper {
-	public List<Map<String, Object>> selectMenuListAll() throws DataAccessException;
+	public HashMap<String, Object> selectOne(HashMap map) throws DataAccessException;
+	public List<Map<String, Object>> selectList() throws DataAccessException;
 }
