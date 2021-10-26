@@ -83,33 +83,27 @@
 	<ax:div name="scripts">
 		<script type="text/javascript">
 			$(function() {
-				var jsTree = $("#jsTree").jstree({
+				$("#jsTree").jstree({
 					core : {
 						data : {
 							url : "/admin/menu/menuList.json",
 							data : function (data) {
-								bbb = data;
 								return {
-									"id": data.menu_code,
+									"id": data.menu_nm,
 									"parent": data.menu_up_code,
 									"menuCode": data.menu_code
 								};
 							}
 						}
-					},
-					types: {
-						'default': {
-							'icon': 'jstree-folder'
-						}
 					}
 				});
-				jsTree.jstree('get_selected', true);
-				jsTree.on("select_node.jstree", function(event, data) {
-					aaa = data;
+				$("#jsTree").jstree('get_selected', true);
+				$("#jsTree").on("select_node.jstree", function(event, data) {
 					console.log("!: " + event.type);
 					console.log("@: " + data.instance.get_node(data.selected).id);
 					//console.log("#: " + data.result.obj.attr("menuCode"));
 					console.log("$: " + data.node.id);
+					console.log("%: " + data.selected);
 					$.ajax({
 						type: "GET",
 						url: "/admin/menu/menu.json",
@@ -123,8 +117,6 @@
 				})
 			});
 			
-			var aaa;
-			var bbb;
 		</script>
 	</ax:div>
 </ax:layout>
