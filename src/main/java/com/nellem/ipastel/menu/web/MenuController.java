@@ -1,4 +1,4 @@
-package com.nellem.ipastel.menu;
+package com.nellem.ipastel.menu.web;
 
 import java.util.Locale;
 

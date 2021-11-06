@@ -46,7 +46,7 @@
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">매뉴목록</h6>
                                 </div>
-                                <div id="jsTree"></div>
+                                <div id="menuTree"></div>
                             </div>
                         </div>
 
@@ -83,40 +83,8 @@
 	<ax:div name="scripts">
 		<script type="text/javascript">
 			$(function() {
-				$("#jsTree").jstree({
-					core : {
-						data : {
-							url : "/admin/menu/menuList.json",
-							data : function (data) {
-								return {
-									"id": data.menu_nm,
-									"parent": data.menu_up_code,
-									"menuCode": data.menu_code
-								};
-							}
-						}
-					}
-				});
-				$("#jsTree").jstree('get_selected', true);
-				$("#jsTree").on("select_node.jstree", function(event, data) {
-					console.log("!: " + event.type);
-					console.log("@: " + data.instance.get_node(data.selected).id);
-					//console.log("#: " + data.result.obj.attr("menuCode"));
-					console.log("$: " + data.node.id);
-					console.log("%: " + data.selected);
-					$.ajax({
-						type: "GET",
-						url: "/admin/menu/menu.json",
-						data: {"menu_code": 1},
-						contentType: "JSON",
-						cache: false,
-						success: function(data) {
-							
-						}
-					});
-				})
+				
 			});
-			
 		</script>
 	</ax:div>
 </ax:layout>
